@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+figure {
+	margin: 0 auto;
+	line-height: 0;
+}
+.inner {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+img {
+	width: 100%;
+}
+.column {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.column article {
+	width: 100%;
+	margin-bottom: 20px;
+}
+@media screen and (min-width:768px) {
+	.column article {
+		width: calc(100%/3 - 11px);
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.column article:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+.js-inview {
+	opacity: 0;
+	-webkit-transform: translate(0, 50px);
+	transform: translate(0, 50px);
+}
+.js-inview .ef-mask-wrap {
+	position: relative;
+	overflow: hidden;
+}
+.js-inview .ef-mask {
+	position: absolute;
+	top: 0;
+	background: #e85305;
+	display: block !important;
+	width: 0;
+	height: 100%;
+}
+.js-inview.is-animated {
+	-webkit-transition: all 0.8s 0s ease;
+	transition: all 0.8s 0s ease;
+	opacity: 1 !important;
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
